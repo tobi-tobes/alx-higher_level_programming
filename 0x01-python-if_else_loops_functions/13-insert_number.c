@@ -24,12 +24,12 @@ listint_t *insert_node(listint_t **head, int number)
 		{
 			new_node->next = temp;
 			temp = new_node;
-			return (new_node);
+			return (temp);
 		}
 		if (temp == NULL)
 		{
 			temp = new_node;
-			return (new_node);
+			return (temp);
 		}
 		while (temp && temp->next)
 		{
