@@ -5,4 +5,4 @@ for i in range(97, 123):
     elif chr(i) == 'q':
         continue
     else:
-        print(chr(i), end="")
+        print("{}".format(chr(i)), end="")
