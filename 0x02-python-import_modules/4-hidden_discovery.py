@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    import hidden_4, sys
+    import hidden_4
+    import sys
     list = dir(hidden_4)
     for i in list:
         if i[0] == "_":
