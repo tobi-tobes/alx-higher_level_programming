@@ -1,5 +1,4 @@
-#include "python3.4/listobject.h"
-#include "python3.4/object.h"
+#include <Python.h>
 #include <stdio.h>
 
 /**
@@ -13,7 +12,7 @@ void print_python_list_info(PyObject *p)
 	PyObject *item;
 	const char *type;
 
-	size = PyList_size(p);
+	size = PyList_Size(p);
 	allocd = ((PyListObject *)(p))->allocated;
 
 	printf("[*] Size of the Python List = %ld\n", size);
