@@ -16,5 +16,5 @@ def add_tuple(tuple_a=(), tuple_b=()):
         xb, yb = tuple_b[0], tuple_b[1]
     else:
         xb, yb = tuple_b
-    sum_tuple = (xa + ya, xb + yb)
+    sum_tuple = (xa + xb, ya + yb)
     return (sum_tuple)
