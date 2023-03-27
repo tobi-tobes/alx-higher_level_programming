@@ -37,6 +37,7 @@ void print_python_bytes(PyObject *p)
 {
 	Py_ssize_t size, i;
 	char *str;
+	int c;
 	const char *type;
 
 	type = p->ob_type->tp_name;
@@ -50,7 +51,16 @@ void print_python_bytes(PyObject *p)
 	str = ((PyBytesObject *)p)->ob_sval;
 
 	printf("  size: %ld\n", size);
-	printf("  trying string: %s\n", str);
+	printf("  trying string: ");
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		c = (int) str[i];
+		if (c > 127 || c < 0)
+			printf("?");
+		else
+			printf("%c", str[i]);
+	}
+	printf("\n");
 	printf("  first %ld bytes: ", (size < 10 ? size + 1 : 10));
 	for (i = 0; i < 10; i++)
 	{
