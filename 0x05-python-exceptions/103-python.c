@@ -25,6 +25,7 @@ void print_python_float(PyObject *p)
 		printf("  value: %0.1f\n", value);
 	else
 		printf("  value: %0.16g\n", value);
+	fflush(stdout);
 }
 
 /**
@@ -58,8 +59,8 @@ void print_python_bytes(PyObject *p)
 			break;
 		printf(" ");
 	}
-	fflush(stdout);
 	printf("\n");
+	fflush(stdout);
 }
 
 /**
