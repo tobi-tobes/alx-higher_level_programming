@@ -20,7 +20,7 @@ void print_python_float(PyObject *p)
 		return;
 	}
 
-	value = PyFloat_AsDouble(p);
+	value = ((PyFloatObject *)p)->ob_fval;
 	if ((int) value == value)
 		printf("  value: %0.1f\n", value);
 	else
@@ -92,7 +92,7 @@ void print_python_list(PyObject *p)
 		return;
 	}
 
-	size = ((PyVarObject *)p)->ob_size;
+	size = PyList_GET_SIZE(p);
 	allocd = ((PyListObject *)p)->allocated;
 
 	printf("[*] Size of the Python List = %ld\n", size);
