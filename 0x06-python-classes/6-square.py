@@ -64,4 +64,4 @@ and position with the character # to stdout"""
             for i in range(y):
                 print()
             for i in range(self.__size):
-                print(" " * x, "#" * self.__size)
+                print("{}{}".format(" " * x, "#" * self.__size))
