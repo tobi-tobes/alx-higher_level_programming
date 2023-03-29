@@ -75,7 +75,7 @@ position with the character # to stdout"""
         else:
             x = self.__position[0]
             y = self.__position[1]
-            for l in range(y):
+            for i in range(y):
                 output += "\n"
             for i in range(self.__size):
                 for k in range(x):
