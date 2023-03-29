@@ -8,8 +8,8 @@ def safe_print_list_integers(my_list=[], x=0):
                 count += 1
             else:
                 continue
-    except IndexError as err:
-        print("{}".format(err), end="")
+    except IndexError:
+        print("Traceback (most recent call last):", end="")
     except TypeError:
         print("{}".format(my_list), end="")
     print()
