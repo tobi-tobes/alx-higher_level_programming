@@ -10,10 +10,6 @@ class Square:
     def __init__(self, size=0, position=(0, 0)):
         """Creates a new square with the size and
         positional coordinates given as an argument"""
-        if type(value) is not int:
-            raise TypeError("size must be an integer")
-        elif value < 0:
-            raise ValueError("size must be >= 0")
         self.__size = size
         self.__position = position
 

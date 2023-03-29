@@ -64,11 +64,7 @@ position with the character # to stdout"""
             for i in range(y):
                 print()
             for i in range(self.__size):
-                for k in range(x):
-                    print(" ", end="")
-                for j in range(self.__size):
-                    print("#", end="")
-                print()
+                print(" " * x, "#" * self.__size)
 
     def __str__(self):
         """Determines what is printed out by print()"""
@@ -79,13 +75,13 @@ position with the character # to stdout"""
         else:
             x = self.__position[0]
             y = self.__position[1]
-            for i in range(y):
+            for l in range(y):
                 output += "\n"
             for i in range(self.__size):
                 for k in range(x):
                     output += " "
                 for j in range(self.__size):
                     output += "#"
-                if i != self.__size - 1:
+                if i < self.__size - 1:
                     output += "\n"
         return (output)
