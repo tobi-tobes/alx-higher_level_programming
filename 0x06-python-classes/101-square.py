@@ -70,7 +70,6 @@ position with the character # to stdout"""
         """Determines what is printed out by print()"""
         output = ""
         if self.__size == 0:
-            output += "\n"
             return (output)
         else:
             x = self.__position[0]

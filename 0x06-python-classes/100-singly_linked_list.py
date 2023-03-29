@@ -10,8 +10,15 @@ class Node:
     """Defines a node of a singly-linked list"""
     def __init__(self, data, next_node=None):
         """Creates a new node with the given data and next_node parameters"""
-        self.__data = data
+        self.__data = self.is_valid_data(data)
         self.__next_node = next_node
+
+    def is_valid_data(self, value):
+        """Checks that initial data input is valid before creating instance"""
+        if type(value) is not int:
+            raise TypeError("data must be an integer")
+        else:
+            return (value)
 
     @property
     def data(self):
