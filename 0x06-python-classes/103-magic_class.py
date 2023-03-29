@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+"""
+MagicClass
+
+This module defines a class MagicClass with given parameters
+"""
+
 import math
 
 
