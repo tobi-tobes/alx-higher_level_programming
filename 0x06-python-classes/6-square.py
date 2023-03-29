@@ -59,11 +59,9 @@ and position with the character # to stdout"""
         if self.__size == 0:
             print()
         else:
-            for i in range(self.__position[1]):
+            x = self.__position[0]
+            y = self.__position[1]
+            for i in range(y):
                 print()
             for i in range(self.__size):
-                for k in range(self.__position[0]):
-                    print(" ", end="")
-                for j in range(self.__size):
-                    print("#", end="")
-                print()
+                print(" " * x, "#" * self.__size)
