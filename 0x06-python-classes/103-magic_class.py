@@ -1,6 +1,11 @@
 #!/usr/bin/python3
 import math
 
+"""
+MagicClass Class
+This module defines a circle with the given circumference
+"""
+
 
 class MagicClass:
     """Represents a circle"""
