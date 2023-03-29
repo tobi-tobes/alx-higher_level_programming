@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import math
+"""Imports math module, which contains arithmetic functions and variables"""
 
 """
 MagicClass Class
