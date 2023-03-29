@@ -1,10 +1,5 @@
 #!/usr/bin/python3
 import math
-"""
-MagicClass Class
-This module defines a circle with radius attribute and area and circumference
-methods
-"""
 
 
 class MagicClass:
