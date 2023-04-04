@@ -1,0 +1,91 @@
+===============================
+ How to Use 2-matrix_divided.py
+===============================
+
+This module has only has one function called
+``matrix_divided()``.
+
+Output
+=======
+
+``matrix_divided()`` divides the elements of a list of lists
+by div, to two decimal places. The first argument must be
+a matrix (a list of lists) and the second argument must
+be a number (integer or float). The return is a matrix of the
+quotients of division.
+
+::
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+    >>> matrix_divided(matrix, -3)
+    [[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
+
+It also works with negative or positive floating-point values
+
+::
+
+    >>> matrix_divided(matrix, 3.0)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+    >>> matrix_divided(matrix, -3.0)
+    [[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
+
+Errors
+======
+
+If 'matrix' is not a list of lists of floats/integers, or
+'div' is not a float or integer, ``matrix_divided()``
+will raise a TypeError. If 'div' is 0, ``matrix_divided()``
+will raise a ZeroDivisionError. Also, if the lists
+within the matrix are not the same length,
+``matrix_divided()`` will raise a TypeError.
+
+::
+
+    >>> matrix = [2, [4, 5, 6]]
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = [[7, 8], [4, 5, 6]]
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+    >>> matrix = "[2, [4, 5, 6]]"
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = [[7, 8, 9], [4, 5, 6]]
+    >>> matrix_divided(matrix, "3")
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+    >>> matrix = [[7, 8, 9], [4, 5, 6]]
+    >>> matrix_divided(matrix, 0)
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
+
+    >>> matrix = [[7, 8, 9], [4, "5", 6]]
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = []
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = [[]]
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = None
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats

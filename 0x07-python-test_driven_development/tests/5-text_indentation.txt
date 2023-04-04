@@ -1,0 +1,39 @@
+==================================
+ How to Use 5-text_indentation.py
+==================================
+
+This module has only has one function called
+``text_indentation()``.
+
+Output
+=======
+
+``text_indentation()`` prints a text with 2 new lines
+after each of these characters: ``.``, ``?`` and ``:``.
+
+::
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> text_indentation("Hello? Who are you? What is your name?")
+    Hello?
+    <BLANKLINE>
+    Who are you?
+    <BLANKLINE>
+    What is your name?
+    <BLANKLINE>
+
+Errors
+======
+
+If ``text`` is not a string, ``text_indentation()`` will
+raise a TypeError
+
+::
+
+    >>> text_indentation(4)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation(["Hello? Who are you? What is your name?"])
+    Traceback (most recent call last):
+    TypeError: text must be a string
