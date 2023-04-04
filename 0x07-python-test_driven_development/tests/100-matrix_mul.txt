@@ -1,0 +1,71 @@
+===============================
+ How to Use 100-matrix_mul.py
+===============================
+
+This module has only has one function called
+``matrix_mul()``.
+
+Output
+=======
+
+``matrix_mul()`` multiplies two matrices together
+and returns the product. The matrices must contain
+either integers or floats. The numbers can be negative
+or positive.
+
+::
+
+    >>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+    >>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+    [[7, 10], [15, 22]]
+    >>> matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+    [[13, 16]]
+    >>> matrix_mul([[1, 2.1]], [[3, 4], [5, 6]])
+    [[13.5, 16.6]]
+    >>> matrix_mul([[1, 2]], [[3, -4], [5, 6]])
+    [[13, 8]]
+
+Errors
+======
+
+If either argument is not a list of lists of integers/floats,
+a TypeError will be raised. If either argument is empty, a
+ValueError will be raised. If the number of columns in the
+first argument is not equal to the number of rows in the
+second argument, the matrices cannot be multiplied and a
+ValueError will be raised. Also, the matrices must be
+rectangles (each row must be the same size).
+
+::
+
+    >>> matrix_mul([[1, 2], [3, 4, 3]], [[1, 2], [3, 4]])
+    Traceback (most recent call last):
+    TypeError: each row of m_a must be of the same size
+
+    >>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4, 4]])
+    Traceback (most recent call last):
+    TypeError: each row of m_b must be of the same size
+
+    >>> matrix_mul([[1, 2], [3, 4], [4, 5]], [[1, 2], [3, 4], [4, 5]])
+    Traceback (most recent call last):
+    ValueError: m_a and m_b can't be multiplied
+
+    >>> matrix_mul([([1, 2], 4), [3, 4], [4, 5]], [[1, 2], [3, 4], [4, 5]])
+    Traceback (most recent call last):
+    TypeError: m_a must be a list of lists
+
+    >>> matrix_mul([[1, 2], [3, 4], [4, 5]], [])
+    Traceback (most recent call last):
+    ValueError: m_b can't be empty
+
+    >>> matrix_mul([[1, 2], [3, 4], [4, 5]], [[]])
+    Traceback (most recent call last):
+    ValueError: m_b can't be empty
+
+    >>> matrix_mul([[1, 2], [3, 4], [4, 5]], "[]")
+    Traceback (most recent call last):
+    TypeError: m_b must be a list
+
+    >>> matrix_mul([[1, 2], [3, 4], [4, 5]], [2, [3, 4]])
+    Traceback (most recent call last):
+    TypeError: m_b must be a list of lists
