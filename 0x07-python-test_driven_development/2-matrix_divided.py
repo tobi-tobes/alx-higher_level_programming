@@ -13,15 +13,13 @@ def matrix_divided(matrix, div):
         raise TypeError("matrix must be a matrix (list of lists)\
  of integers/floats")
     elif len(matrix) == 0:
-        raise TypeError("matrix must be a matrix (list of lists)\
- of integers/floats")
+        raise ValueError("your matrix can't be empty")
     elif type(matrix[0]) is not list:
         raise TypeError("matrix must be a matrix (list of lists)\
  of integers/floats")
     compare = len(matrix[0])
     if compare == 0:
-        raise TypeError("matrix must be a matrix (list of lists)\
- of integers/floats")
+        raise ValueError("your matrix can't be empty")
     for i in range(1, len(matrix)):
         if type(matrix[i]) is not list:
             raise TypeError("matrix must be a matrix (list of lists)\

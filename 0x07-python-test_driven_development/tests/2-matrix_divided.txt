@@ -78,12 +78,12 @@ within the matrix are not the same length,
     >>> matrix = []
     >>> matrix_divided(matrix, 3)
     Traceback (most recent call last):
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
+    ValueError: your matrix can't be empty
 
     >>> matrix = [[]]
     >>> matrix_divided(matrix, 3)
     Traceback (most recent call last):
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
+    ValueError: your matrix can't be empty
 
     >>> matrix = None
     >>> matrix_divided(matrix, 3)
