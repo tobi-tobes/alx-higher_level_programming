@@ -6,7 +6,7 @@ This module contains the function print_square,
 """
 
 
-def print_square(size):
+def print_square(size=0):
     """Prints a square with the given dimension size"""
     if type(size) is not int:
         raise TypeError("size must be an integer")
