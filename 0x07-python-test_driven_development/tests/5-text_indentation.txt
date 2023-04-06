@@ -37,3 +37,7 @@ raise a TypeError
     >>> text_indentation(["Hello? Who are you? What is your name?"])
     Traceback (most recent call last):
     TypeError: text must be a string
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+    TypeError: text must be a string
