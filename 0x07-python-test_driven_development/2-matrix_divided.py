@@ -20,7 +20,7 @@ def matrix_divided(matrix, div):
     compare = len(matrix[0])
     if compare == 0:
         raise ValueError("your matrix can't be empty")
-    for i in range(1, len(matrix)):
+    for i in range(len(matrix)):
         if type(matrix[i]) is not list:
             raise TypeError("matrix must be a matrix (list of lists)\
  of integers/floats")

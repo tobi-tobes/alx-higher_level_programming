@@ -8,6 +8,10 @@ which multuplies two matrices together
 
 def matrix_mul(m_a, m_b):
     """Returns a new matrix that is the product of the input matrices"""
+    if m_a is None:
+        raise ValueError("m_a must be a valid argument")
+    elif m_b is None:
+        raise ValueError("m_b must be a valid argument")
     if type(m_a) is not list:
         raise TypeError("m_a must be a list")
     elif type(m_b) is not list:
@@ -26,7 +30,7 @@ def matrix_mul(m_a, m_b):
         raise ValueError("m_a can't be empty")
     elif compare_b == 0:
         raise ValueError("m_b can't be empty")
-    for i in range(1, len(m_a)):
+    for i in range(len(m_a)):
         if type(m_a[i]) is not list:
             raise TypeError("m_a must be a list of lists")
         elif len(m_a[i]) != compare_a:
@@ -34,7 +38,7 @@ def matrix_mul(m_a, m_b):
         for j in range(len(m_a[i])):
             if type(m_a[i][j]) not in [int, float]:
                 raise TypeError("m_a should contain only integers or floats")
-    for i in range(1, len(m_b)):
+    for i in range(len(m_b)):
         if type(m_b[i]) is not list:
             raise TypeError("m_b must be a list of lists")
         elif len(m_b[i]) != compare_b:
@@ -51,7 +55,7 @@ def matrix_mul(m_a, m_b):
         matrix_prod_row = []
         for j in range(cols):
             prod = 0
-            for k in range(cols):
+            for k in range(len(m_a[i])):
                 mul_1 = m_a[i][k]
                 mul_2 = m_b[k][j]
                 prod += (mul_1 * mul_2) if type((mul_1 * mul_2))\

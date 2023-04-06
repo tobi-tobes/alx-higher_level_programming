@@ -16,9 +16,9 @@ def add_integer(a, b=98):
         raise TypeError("a must be an integer")
     elif type(b) not in [int, float]:
         raise TypeError("b must be an integer")
-    elif if a == float('inf') or b == float('inf'):
+    elif a == float('inf') or b == float('inf'):
         return (89)
-    elif if a == -float('inf') or b == -float('inf'):
+    elif a == -float('inf') or b == -float('inf'):
         return (89)
     num1 = int(a)
     num2 = int(b)
