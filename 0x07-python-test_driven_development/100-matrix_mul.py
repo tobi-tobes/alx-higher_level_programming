@@ -6,7 +6,7 @@ which multuplies two matrices together
 """
 
 
-def matrix_mul(m_a, m_b):
+def matrix_mul(m_a=[[]], m_b=[[]]):
     """Returns a new matrix that is the product of the input matrices"""
     if m_a is None:
         raise ValueError("m_a must be a valid argument")
@@ -33,19 +33,19 @@ def matrix_mul(m_a, m_b):
     for i in range(len(m_a)):
         if type(m_a[i]) is not list:
             raise TypeError("m_a must be a list of lists")
-        elif len(m_a[i]) != compare_a:
-            raise TypeError("each row of m_a must be of the same size")
         for j in range(len(m_a[i])):
             if type(m_a[i][j]) not in [int, float]:
                 raise TypeError("m_a should contain only integers or floats")
+        if len(m_a[i]) != compare_a:
+            raise TypeError("each row of m_a must be of the same size")
     for i in range(len(m_b)):
         if type(m_b[i]) is not list:
             raise TypeError("m_b must be a list of lists")
-        elif len(m_b[i]) != compare_b:
-            raise TypeError("each row of m_b must be of the same size")
         for j in range(len(m_b[i])):
             if type(m_b[i][j]) not in [int, float]:
                 raise TypeError("m_b should contain only integers or floats")
+        if len(m_b[i]) != compare_b:
+            raise TypeError("each row of m_b must be of the same size")
     rows = len(m_a)
     cols = len(m_b[0])
     if len(m_a[0]) != len(m_b):
