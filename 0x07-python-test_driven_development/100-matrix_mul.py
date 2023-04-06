@@ -6,7 +6,7 @@ which multuplies two matrices together
 """
 
 
-def matrix_mul(m_a=[[]], m_b=[[]]):
+def matrix_mul(m_a=[[1]], m_b=[[1]]):
     """Returns a new matrix that is the product of the input matrices"""
     if m_a is None:
         raise ValueError("m_a must be a valid argument")
