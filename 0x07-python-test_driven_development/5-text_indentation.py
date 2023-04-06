@@ -7,11 +7,11 @@ of these characters: ., ? and :.
 """
 
 
-def text_indentation(text):
+def text_indentation(text=None):
     """prints a text with 2 new lines after
  each of these characters: ., ? and :"""
     if text is None:
-        raise TypeError("text must be a string")
+        raise TypeError("missing an argument")
     if type(text) is not str:
         raise TypeError("text must be a string")
     elif len(text) == 0:
