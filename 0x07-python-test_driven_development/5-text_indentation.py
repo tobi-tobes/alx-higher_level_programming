@@ -11,7 +11,7 @@ def text_indentation(text):
     """prints a text with 2 new lines after
  each of these characters: ., ? and :"""
     if text is None:
-        raise ValueError("string can't be empty")
+        raise TypeError("text must be a string")
     if type(text) is not str:
         raise TypeError("text must be a string")
     elif len(text) == 0:
