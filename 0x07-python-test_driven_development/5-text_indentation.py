@@ -10,6 +10,8 @@ of these characters: ., ? and :.
 def text_indentation(text):
     """prints a text with 2 new lines after
  each of these characters: ., ? and :"""
+    if text is None:
+        raise ValueError("string can't be empty")
     if type(text) is not str:
         raise TypeError("text must be a string")
     elif len(text) == 0:
@@ -29,7 +31,7 @@ def text_indentation(text):
         elif text[i] == " " and (text[i - 1] == " " or text[i + 1] == " "):
             print("", end="")
             i += 1
-        elif text[i] == " " and (text[i - 1] == "." or text[i - 1] == "?"\
+        elif text[i] == " " and (text[i - 1] == "." or text[i - 1] == "?"
                                  or text[i - 1] == ":"):
             print("", end="")
             i += 1
