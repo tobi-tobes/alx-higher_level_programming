@@ -25,7 +25,8 @@ argument is given, the second argument has a default value of 98.
     1
 
 It also works with floating-point values by casting
-the float to an int before adding.
+the float to an int before adding. It checks for float
+overflow and float NaN.
 
 ::
 
@@ -35,6 +36,11 @@ the float to an int before adding.
     5
     >>> add_integer(2.0)
     100
+    >>> check = float("NaN")
+    >>> add_integer(check, 45)
+    134
+    >>> add_integer(float('inf'))
+    89
 
 Non-Numbers
 ===========

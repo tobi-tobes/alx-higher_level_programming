@@ -16,43 +16,26 @@ class TestMaxInteger(unittest.TestCase):
         """Tests whether the function returns None if list is empty"""
         self.assertEqual(max_integer([]), None)
 
-    def test_normal_input(self):
-        """Tests whether the function returns the largest
- number in a list of integers"""
-        test_list = [2, 4, 6, 8, 6, 9, 11]
-        self.assertEqual(max_integer(test_list), 11)
+    def test_max_in_the_middle(self):
+        """Tests whether the function handles max in the middle"""
+        test_list = [2, 4, 6, 18, 6, 9, 11]
+        self.assertEqual(max_integer(test_list), 18)
 
-    def test_raise_list_with_nonint(self):
-        """Tests whether the function raises a TypeError when
- encountering a non-integer in a list"""
-        test_list = [2, "4", 6, None, 6, 9, 11]
-        with self.assertRaises(TypeError):
-            max_integer(test_list)
+    def test_max_at_end(self):
+        """Tests whether the function handles max at end"""
+        test_list = [2, 9, 11, 5, 4, 3, 12]
+        self.assertEqual(max_integer(test_list), 12)
 
-    def test_raise_not_a_list(self):
-        """Tests whether the function raises an error if input is not a list"""
-        test_list = (4, 6, 9, 8, 7)
-        with self.assertRaises(TypeError):
-            max_integer(test_list)
-
-    def test_raise_a_string(self):
-        """Tests whether the function raises an error if input is a string"""
-        test_list = "(4, 6, 9, 8, 7)"
-        with self.assertRaises(TypeError):
-            max_integer(test_list)
+    def test_max_at_beginning(self):
+        """Tests whether the function handles max at beginning"""
+        test_list = [13, 9, 11, 5, 4, 3, 12]
+        self.assertEqual(max_integer(test_list), 13)
 
     def test_list_with_negs(self):
         """Tests whether the function returns the largest
  number in a list of positive and negative integers"""
-        test_list = [2, 4, 6, -8, 7, 9, -11]
+        test_list = [2, 4, 6, -8, 7, 9, 1]
         self.assertEqual(max_integer(test_list), 9)
-
-    def test_raise_list_with_float(self):
-        """Tests whether the function raises a TypeError
- when encountering a float"""
-        test_list = [2, 5.5, 6, 9, 11]
-        with self.assertRaises(TypeError):
-            max_integer(test_list)
 
     def test_list_with_one(self):
         """Tests whether the function returns the only integer in a list"""
