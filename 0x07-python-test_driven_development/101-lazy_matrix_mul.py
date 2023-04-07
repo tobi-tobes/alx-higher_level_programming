@@ -19,7 +19,7 @@ def lazy_matrix_mul(m_a=[[1]], m_b=[[1]]):
     w_b = len(m_b[0]) if h_b != 0 else 0
     if h_a == 0 or w_a == 0 or h_b == 0 or w_b == 0:
         raise ValueError("shapes ({:d},{:d}) and ({:d},{:d}) not aligned: {:d}\
- (dim {:d}) != {:d} (dim {:d})".format(w_b, h_a, w_b, w_b, h_a, h_b, w_b, h_a))
+ (dim 1) != {:d} (dim 0)".format(h_a, w_a, h_b, w_b, w_a, h_b))
     for i in range(len(m_a)):
         if type(m_a[i]) is not list:
             raise TypeError("invalid data type for einsum")
@@ -38,5 +38,5 @@ def lazy_matrix_mul(m_a=[[1]], m_b=[[1]]):
                 raise TypeError("invalid data type for einsum")
     if len(m_a[0]) != len(m_b):
         raise ValueError("shapes ({:d},{:d}) and ({:d},{:d}) not aligned: {:d}\
- (dim {:d}) != {:d} (dim {:d})".format(w_b, h_a, w_b, w_b, h_a, h_b, w_b, h_a))
+ (dim 1) != {:d} (dim 0)".format(h_a, w_a, h_b, w_b, w_a, h_b))
     return (numpy.dot(m_a, m_b))
