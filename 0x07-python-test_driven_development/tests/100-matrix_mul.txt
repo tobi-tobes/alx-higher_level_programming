@@ -86,7 +86,7 @@ rectangles (each row must be the same size).
     Traceback (most recent call last):
     TypeError: m_b should contain only integers or floats
 
-    >>> print(matrix_mul())
+    >>> matrix_mul()
     [[1]]
 
     >>> matrix_mul([[2, 3, 4]])
