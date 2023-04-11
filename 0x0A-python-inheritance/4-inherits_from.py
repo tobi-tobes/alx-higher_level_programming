@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-inherits_from Function
-This module defines a function `def inherits_from(obj, a_class):`
+A Function
+This module defines a function that does what is stated below
 """
 
 

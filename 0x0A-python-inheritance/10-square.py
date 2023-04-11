@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
 BaseGeometry Class
-This module defines a class BaseGeometry and its subclasses Rectangle and Square
+This module defines a class BaseGeometry and its
+ subclasses Rectangle and Square
 """
 
 

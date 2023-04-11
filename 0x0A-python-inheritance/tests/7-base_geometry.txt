@@ -49,3 +49,18 @@ will raise a ValueError.
     ... except Exception as e:
     ...     print("[{}] {}".format(e.__class__.__name__, e))
     [TypeError] style must be an integer
+    >>> try:
+    ...     bg.integer_validator("name", float('inf'))
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] name must be an integer
+    >>> try:
+    ...     bg.integer_validator("name", float('NaN'))
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] name must be an integer
+    >>> try:
+    ...     bg.integer_validator("name", 3.8)
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] name must be an integer
