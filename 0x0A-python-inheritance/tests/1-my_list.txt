@@ -1,0 +1,83 @@
+=========================
+ How to Use 1-my_list.py
+=========================
+
+This module has only has one class called
+``MyList`` with a public instance method
+``def print_sorted(self):``.
+
+Output
+=======
+
+``print_sorted()`` prints a list that has been
+sorted in ascending order. Note that it does not
+affect the original list
+
+::
+
+    >>> MyList = __import__('1-my_list').MyList
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(5)
+    >>> my_list.append(3)
+    >>> my_list.append(4)
+    >>> my_list.print_sorted()
+    [1, 3, 4, 5]
+    >>> print(my_list)
+    [1, 5, 3, 4]
+
+It also works with lists with only negative values
+
+::
+
+    >>> my_list2 = MyList()
+    >>> my_list2.append(-1)
+    >>> my_list2.append(-3)
+    >>> my_list2.append(-5)
+    >>> my_list2.append(-4)
+    >>> my_list2.print_sorted()
+    [-5, -4, -3, -1]
+
+It also works with lists with a mix of negative
+and positive values:
+
+::
+
+    >>> my_list3 = MyList()
+    >>> my_list3.append(-1)
+    >>> my_list3.append(2)
+    >>> my_list3.append(-5)
+    >>> my_list3.append(4)
+    >>> my_list3.append(-3)
+    >>> my_list3.append(6)
+    >>> my_list3.print_sorted()
+    [-5, -3, -1, 2, 4, 6]
+
+It also works with lists where all the
+values are the same:
+
+::
+
+    >>> my_list4 = MyList()
+    >>> my_list4.append(2)
+    >>> my_list4.append(2)
+    >>> my_list4.append(2)
+    >>> my_list4.append(2)
+    >>> my_list4.append(2)
+    >>> my_list4.append(2)
+    >>> my_list4.print_sorted()
+    [2, 2, 2, 2, 2, 2]
+
+It also works with lists with one and
+with two values:
+
+::
+
+    >>> my_list5 = MyList()
+    >>> my_list5.append(2)
+    >>> my_list5.append(-4)
+    >>> my_list5.print_sorted()
+    [-4, 2]
+    >>> my_list6.append(7)
+    >>> my_list6.print_sorted()
+    [7]
