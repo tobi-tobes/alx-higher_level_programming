@@ -8,7 +8,7 @@ a new attribute to an object if it's possible
 
 def add_attribute(obj, name, value):
     """adds a new attribute to an object if it's possible"""
-    if hasattr(obj, '__dict__') and isinstance(obj.__dict__, dict):
+    if hasattr(obj, '__dict__'):
         obj.name = value
     else:
         raise TypeError("can't add new attribute")
