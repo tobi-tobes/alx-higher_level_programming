@@ -69,7 +69,7 @@ values are the same:
     [2, 2, 2, 2, 2, 2]
 
 It also works with lists with one and
-with two values:
+with two values, as well as empty lists:
 
 ::
 
@@ -82,3 +82,6 @@ with two values:
     >>> my_list6.append(7)
     >>> my_list6.print_sorted()
     [7]
+    >>> my_list7 = MyList()
+    >>> my_list7.print_sorted()
+    []
