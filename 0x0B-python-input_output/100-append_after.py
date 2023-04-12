@@ -17,9 +17,10 @@ def append_after(filename="", search_string="", new_string=""):
     for i in range(len(lines)):
         if search_string in lines[i]:
             if (i + 1) < len(lines) - 1:
-                lines.insert(i + 1, new_string)
+                lines.insert(i + 1, new_string
+                             if len(new_string) > 0 else "\n")
             else:
-                lines.append(new_string)
+                lines.append(new_string if len(new_string) > 0 else "\n")
         else:
             continue
     with open(filename, 'w', encoding="utf-8") as f:
