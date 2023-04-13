@@ -43,8 +43,8 @@ class Square(Rectangle):
     """defines a class Square that is a subclass of Rectangle"""
     def __init__(self, size):
         """instantiates a Square instance"""
-        super().integer_validator("width", size)
-        super().integer_validator("height", size)
+        super().integer_validator("size", size)
+        super().integer_validator("size", size)
         self.__width = size
         self.__height = size
 

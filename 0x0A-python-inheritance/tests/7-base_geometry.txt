@@ -74,3 +74,33 @@ will raise a ValueError.
     ... except Exception as e:
     ...     print("[{}] {}".format(e.__class__.__name__, e))
     [TypeError] name must be an integer
+    >>> try:
+    ...     bg.integer_validator()
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] integer_validator() missing 2 required positional arguments: 'name' and 'value'
+    >>> try:
+    ...     bg.integer_validator("age")
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] integer_validator() missing 1 required positional argument: 'value'
+    >>> try:
+    ...     bg.integer_validator("name", (3,))
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] name must be an integer
+    >>> try:
+    ...     bg.integer_validator("name", [5])
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] name must be an integer
+    >>> try:
+    ...     bg.integer_validator("name", True)
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] name must be an integer
+    >>> try:
+    ...     bg.integer_validator("name", {3, 4})
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] name must be an integer

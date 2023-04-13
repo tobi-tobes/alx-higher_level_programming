@@ -6,44 +6,17 @@ This module defines a class BaseGeometry and its
 """
 
 
-class BaseGeometry(object):
-    """defines a class BaseGeometry"""
-    def area(self):
-        """raises an Exception with the message area() is not implemented"""
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """validates value"""
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format(locals()['name']))
-        if value <= 0:
-            raise ValueError("{} must be greater than 0".format(locals()
-                                                                ['name']))
-
-
-class Rectangle(BaseGeometry):
-    """defines a class Rectangle that is a subclass of BaseGeometry"""
-    def __init__(self, width, height):
-        """instantiates a Rectangle instance"""
-        super().integer_validator("width", width)
-        super().integer_validator("height", height)
-        self.__width = width
-        self.__height = height
-
-    def area(self):
-        """computes the area of the rectangle"""
-        return(self.__width * self.__height)
-
-    def __str__(self):
-        """returns the string representation of a Rectangle object"""
-        return(f"[Rectangle] {self.__width}/{self.__height}")
+Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
     """defines a class Square that is a subclass of Rectangle"""
     def __init__(self, size):
         """instantiates a Square instance"""
-        super().__init__(size, size)
+        super().integer_validator("size", size)
+        super().integer_validator("size", size)
+        self.__width = size
+        self.__height = size
 
     def area(self):
         """computes the area of the Square"""
