@@ -43,6 +43,42 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             r1 = Rectangle()
 
+    def test_init_neg_width(self):
+        """Tests that an error is raised when creating
+        an instance with negative width"""
+        with self.assertRaises(ValueError):
+            r4 = Rectangle(-10, 2, 3, 1)
+
+    def test_init_not_int_width(self):
+        """Tests that an error is raised when creating
+        an instance with non-int width"""
+        with self.assertRaises(TypeError):
+            r4 = Rectangle("-10", 2, 3, 1)
+
+    def test_init_zero_width(self):
+        """Tests that an error is raised when creating
+        an instance with width of zero"""
+        with self.assertRaises(ValueError):
+            r4 = Rectangle(0, 2, 3, 1)
+
+    def test_init_neg_height(self):
+        """Tests that an error is raised when creating
+        an instance with negative height"""
+        with self.assertRaises(ValueError):
+            r4 = Rectangle(10, -2, 3, 1)
+
+    def test_init_not_int_height(self):
+        """Tests that an error is raised when creating
+        an instance with non-int height"""
+        with self.assertRaises(TypeError):
+            r4 = Rectangle(5, [2], 3, 1)
+
+    def test_init_zero_height(self):
+        """Tests that an error is raised when creating
+        an instance with height of zero"""
+        with self.assertRaises(ValueError):
+            r4 = Rectangle(6, 0, 3, 1)
+
     def test_unassigned_y(self):
         """Tests that an instance of Rectangle that is
         created with y not assigned gets its
