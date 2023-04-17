@@ -19,6 +19,11 @@ class TestRectangle(unittest.TestCase):
         Base"""
         r1 = Rectangle(4, 6, 2, 1, 12)
         self.assertTrue(issubclass(type(r1), Base))
+
+    def test_if_instance(self):
+        """Tests that Rectangle is an instance of
+        Base"""
+        r1 = Rectangle(4, 6, 2, 1, 12)
         self.assertIsInstance(r1, Rectangle)
         self.assertIsInstance(r1, Base)
 
@@ -38,29 +43,75 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             r1 = Rectangle()
 
-    def test_unassigned_x_or_y(self):
+    def test_unassigned_y(self):
         """Tests that an instance of Rectangle that is
-        created with x or y not assigned gets its
+        created with y not assigned gets its
         default values"""
-        r2 = Rectangle(5, 4, 0, 0, 1)
+        r2 = Rectangle(5, 4, x=10, id=1)
         self.assertEqual(r2.width, 5)
         self.assertEqual(r2.height, 4)
-        self.assertEqual(r2.x, 0)
+        self.assertEqual(r2.x, 10)
         self.assertEqual(r2.y, 0)
         self.assertEqual(r2.id, 1)
 
-    def test_raises_value_error(self):
-        """Tests that bad inputs for Rectangle instance
+    def test_unassigned_x(self):
+        """Tests that an instance of Rectangle that is
+        created with x not assigned gets its
+        default values"""
+        r2 = Rectangle(5, 4, y=5, id=1)
+        self.assertEqual(r2.width, 5)
+        self.assertEqual(r2.height, 4)
+        self.assertEqual(r2.x, 0)
+        self.assertEqual(r2.y, 5)
+        self.assertEqual(r2.id, 1)
+
+    def test_init_no_height(self):
+        """Tests that an error is raised when creating
+        an instance without width"""
+        with self.assertRaises(TypeError):
+            r1 = Rectangle(5, x=1, y=2, id=3)
+
+    def test_raises_width_value_error(self):
+        """Tests that bad inputs for width of a Rectangle instance
         raise a ValueError"""
         r2 = Rectangle(5, 4)
         with self.assertRaises(ValueError):
             r2.width = -10
         with self.assertRaises(ValueError):
+            r2.width = 0
+        with self.assertRaises(ValueError):
+            r4 = Rectangle(-10, 2, 3, 1)
+        with self.assertRaises(ValueError):
+            r4 = Rectangle(0, 2, 3, 1)
+
+    def test_raises_height_value_error(self):
+        """Tests that bad inputs for height of a Rectangle instance
+        raise a ValueError"""
+        r2 = Rectangle(5, 4)
+        with self.assertRaises(ValueError):
+            r2.height = -10
+        with self.assertRaises(ValueError):
             r2.height = 0
+        with self.assertRaises(ValueError):
+            r4 = Rectangle(10, -2, 3, 1)
+        with self.assertRaises(ValueError):
+            r4 = Rectangle(10, 0, 3, 1)
+
+    def test_raises_x_value_error(self):
+        """Tests that bad inputs for x of a Rectangle instance
+        raise a ValueError"""
+        r2 = Rectangle(5, 4)
         with self.assertRaises(ValueError):
             r2.x = -10
         with self.assertRaises(ValueError):
-            r2.y = -1
+            r4 = Rectangle(10, 2, -3, 1)
+
+    def test_raises_y_value_error(self):
+        """Tests that bad inputs for y of a Rectangle instance
+        raise a ValueError"""
+        r2 = Rectangle(5, 4)
+        with self.assertRaises(ValueError):
+            r2.y = -10
         with self.assertRaises(ValueError):
             r4 = Rectangle(10, 2, 3, -1)
 
