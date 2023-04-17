@@ -69,7 +69,7 @@ class Base(object):
         if dictionary is None:
             raise TypeError("dictionary must be a dictionary")
         elif len(dictionary) == 0:
-            raise TypeError("dictionary xannot be empty")
+            raise TypeError("dictionary cannot be empty")
         new_instance = cls(1, 1)
         new_instance.update(**dictionary)
         return new_instance
@@ -98,7 +98,7 @@ class Base(object):
     def save_to_file_csv(cls, list_objs):
         """serializes list_objs to a CSV file"""
         list_to_save = []
-        if list_objs is not None and len(list_objs) != 0:
+        if list_objs:
             for objs in list_objs:
                 if objs is not None:
                     to_dict = objs.to_dictionary()
