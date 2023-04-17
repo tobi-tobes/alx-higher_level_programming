@@ -71,6 +71,10 @@ class Base(object):
         elif len(dictionary) == 0:
             raise TypeError("dictionary cannot be empty")
         new_instance = cls(1, 1)
+        test_dict = new_instance.to_dictionary()
+        for k, v in dictionary.items():
+            if k not in test_dict:
+                raise ValueError("invalid attribute")
         new_instance.update(**dictionary)
         return new_instance
 
