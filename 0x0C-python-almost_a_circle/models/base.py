@@ -32,7 +32,7 @@ class Base(object):
         of list_dictionaries"""
         if list_dictionaries is None:
             return "[]"
-        if len(list_dictionaries) == 0:
+        elif len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
 
@@ -42,7 +42,7 @@ class Base(object):
         representation json_string"""
         if json_string is None:
             return []
-        if len(json_string) == 0:
+        elif len(json_string) == 0:
             return []
         return json.loads(json_string)
 
