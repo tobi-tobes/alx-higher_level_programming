@@ -177,3 +177,4 @@ class Base(object):
                 t.fd(squares.width)
                 t.rt(90)
                 t.fd(squares.height)
+        turtle.exitonclick()
