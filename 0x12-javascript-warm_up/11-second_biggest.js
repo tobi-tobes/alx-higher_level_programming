@@ -16,7 +16,7 @@ let largest = arr[0];
 
 for (let i = 1; i < arr.length; i++) {
   if (arr[i] > largest) {
-      largest = arr[i];
+    largest = arr[i];
   }
 }
 
@@ -26,8 +26,8 @@ arr.splice(index, 1);
 let second = arr[0];
 
 for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > second) {
-	second = arr[i];
-    }
+  if (arr[i] > second) {
+    second = arr[i];
+  }
 }
 console.log(second);
