@@ -13,14 +13,21 @@ for (let i = 2; i < process.argv.length; i++) {
 }
 
 let largest = arr[0];
-let second = arr[0];
 
 for (let i = 1; i < arr.length; i++) {
   if (arr[i] > largest) {
-    if (largest > second) {
-      second = largest;
-    }
-    largest = arr[i];
+      largest = arr[i];
   }
+}
+
+const index = arr.indexOf(largest);
+arr.splice(index, 1);
+
+let second = arr[0];
+
+for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > second) {
+	second = arr[i];
+    }
 }
 console.log(second);
