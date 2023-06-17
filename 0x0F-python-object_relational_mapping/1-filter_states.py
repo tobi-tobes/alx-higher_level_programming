@@ -16,8 +16,10 @@ if __name__ == "__main__":
 
     db = MySQLdb.connect("localhost", username, password, database)
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id")
+    cursor.execute("SELECT * FROM states WHERE name REGEXP '^N' ORDER BY id")
     result = cursor.fetchall()
     for row in result:
         print(row)
+
+    cursor.close()
     db.close()
