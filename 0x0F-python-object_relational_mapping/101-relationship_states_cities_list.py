@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
-100-relationship_states_cities.py
-This file contains a script that creates the State “California”
-with the City “San Francisco” from the database hbtn_0e_100_usa
+101-relationship_states_cities_list.py
+This file contains a script that lists all State objects, and
+corresponding City objects, contained in the database hbtn_0e_101_usa
 """
 
 
@@ -23,7 +23,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    query = session.query(State).join(City, State.cities).order_by(State.id, City.id).all()
+    query = session.query(State).join(City, State.cities).\
+        order_by(State.id, City.id).all()
     if query:
         for res in query:
             print(f"{res.id}: {res.name}")
