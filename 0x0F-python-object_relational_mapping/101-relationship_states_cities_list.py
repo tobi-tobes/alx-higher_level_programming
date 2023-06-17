@@ -24,11 +24,11 @@ if __name__ == "__main__":
     session = Session()
 
     query = session.query(State).join(City, State.cities).\
-        order_by(State.id).all()
+        order_by(State.id, City.id).all()
     if query:
         for res in query:
             print(f"{res.id}: {res.name}")
-            for i in range(0, len(res.cities)):
-                print(f"\t{res.cities[i].id}: {res.cities[i].name}")
+            for city in res.cities:
+                print(f"\t{city.id}: {city.name}")
 
     session.close()
