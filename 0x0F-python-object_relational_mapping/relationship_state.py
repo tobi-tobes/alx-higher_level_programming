@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-model_state.py
+relationship_state.py
 This file contains the class definition of a State and an
 instance Base = declarative_base()
 """
@@ -20,4 +20,5 @@ class State(Base):
     id = Column("id", Integer, primary_key=True, autoincrement=True,
                 unique=True, nullable=False)
     name = Column("name", String(128), nullable=False)
-    cities = relationship("City", back_populates="states")
+    cities = relationship('City', cascade="all, delete",
+                          back_populates="state")

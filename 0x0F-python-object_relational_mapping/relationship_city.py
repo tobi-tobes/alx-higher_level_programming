@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-model_city.py
+relationship_city.py
 This file contains the class definition of a City
 """
 
 
 from sqlalchemy import Column, String, Integer, ForeignKey
-from model_state import Base
+from relationship_state import Base
 from sqlalchemy.orm import relationship
 
 
