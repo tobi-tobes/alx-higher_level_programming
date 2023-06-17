@@ -21,8 +21,9 @@ if __name__ == "__main__":
     cursor.execute("""SELECT * FROM states WHERE name = '{}'\
  ORDER BY id""".format(arg))
     result = cursor.fetchall()
-    for row in result:
-        print(row)
+    if result is not None:
+        for row in result:
+            print(row)
 
     cursor.close()
     db.close()
