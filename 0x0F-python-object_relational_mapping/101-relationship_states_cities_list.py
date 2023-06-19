@@ -28,6 +28,6 @@ if __name__ == "__main__":
         for res in query:
             print(f"{res.id}: {res.name}")
             for city in res.cities:
-                print(f"    {city.id}: {city.name}")
+                print(f"   {city.id}: {city.name}")
 
     session.close()
