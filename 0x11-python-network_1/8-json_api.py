@@ -18,7 +18,7 @@ if __name__ == "__main__":
     resp = requests.post("http://0.0.0.0:5000/search_user", data=values)
     try:
         resp_dict = resp.json()
-        if len(resp_dict) == 0:
+        if len(resp_dict) == 0 or resp.status_code >= 400:
             print("No result")
         else:
             resp_id = resp_dict.get("id")
