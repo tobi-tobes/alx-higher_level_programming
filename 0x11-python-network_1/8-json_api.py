@@ -16,9 +16,12 @@ if __name__ == "__main__":
         q = sys.argv[1]
     values = {"q": q}
     resp = requests.post("http://0.0.0.0:5000/search_user", data=values)
+    if resp.status_code == 204:
+        print("No result")
+        sys.exit(0)
     try:
         resp_dict = resp.json()
-        if len(resp_dict) == 0 or resp.status_code >= 400:
+        if len(resp_dict) == 0 or resp.status_code != 200:
             print("No result")
         else:
             resp_id = resp_dict.get("id")
