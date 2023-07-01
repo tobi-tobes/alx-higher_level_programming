@@ -13,9 +13,6 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         q = ""
     else:
-        if len(sys.argv) > 1:
-            print("No result")
-            sys.exit(1)
         q = sys.argv[1]
     values = {"q": q}
     resp = requests.post("http://0.0.0.0:5000/search_user", data=values)
