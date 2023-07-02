@@ -16,9 +16,6 @@ if __name__ == "__main__":
         q = sys.argv[1]
     values = {"q": q}
     resp = requests.post("http://0.0.0.0:5000/search_user", data=values)
-    if resp.status_code == 204:
-        print("No result")
-        sys.exit(0)
     try:
         resp_dict = resp.json()
         if len(resp_dict) == 0 or resp.status_code != 200:
@@ -27,5 +24,5 @@ if __name__ == "__main__":
             resp_id = resp_dict.get("id")
             resp_name = resp_dict.get("name")
             print(f"[{resp_id}] {resp_name}")
-    except requests.exceptions.JSONDecodeError as e:
+    except Exception as e:
         print("Not a valid JSON")
