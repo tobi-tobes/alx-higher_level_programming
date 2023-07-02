@@ -12,7 +12,7 @@ import sys
 if __name__ == "__main__":
     user = sys.argv[1]
     pwd = sys.argv[2]
-    url = f"https://api.github.com/{user}"
+    url = f"https://api.github.com/users/{user}"
     headers = {
         "Accept": "application/vnd.github+json",
         "Authorization": f"token {pwd}",
