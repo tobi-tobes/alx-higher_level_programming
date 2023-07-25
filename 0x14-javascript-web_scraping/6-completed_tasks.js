@@ -23,14 +23,5 @@ request(url, (error, response, body) => {
       }
     }
   }
-  let formattedOutput = "{ ";
-  Object.keys(output).sort((a, b) => a - b).forEach(key => {
-      formattedOutput += `  '${key}': ${output[key]},\n`;
-  });
-  formattedOutput = formattedOutput.slice(0, -2);
-  formattedOutput += " }";
-  
-  formattedOutput = formattedOutput.replace(/\{(\s{2})/, "{");
-
-  console.log(formattedOutput);
+  console.log(output);
 });
