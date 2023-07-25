@@ -14,7 +14,7 @@ request(url, (error, response, body) => {
   }
   const tasks = JSON.parse(body);
   for (let i = 0; i < tasks.length; i++) {
-    if (tasks[i].completed) {
+    if (tasks[i].completed === true) {
       const key = tasks[i].userId;
       if (key in output) {
         output[key]++;
