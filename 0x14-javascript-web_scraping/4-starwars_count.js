@@ -8,7 +8,8 @@ let count = 0;
 const searchStr = 'https://swapi-api.alx-tools.com/api/people/' + charId + '/';
 
 request(url, (error, response, body) => {
-  if (error) console.log(error);
+  if (error) throw error;
+  if (response.statusCode !== 200) return;
   const films = JSON.parse(body);
   const filmsList = films.results;
   for (let i = 0; i < filmsList.length; i++) {
