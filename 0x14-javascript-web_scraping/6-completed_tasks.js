@@ -7,7 +7,7 @@ const output = {};
 
 request(url, (error, response, body) => {
   if (error) {
-    return;
+    throw error;
   }
   if (response.statusCode !== 200) {
     return;
@@ -15,7 +15,7 @@ request(url, (error, response, body) => {
   const tasks = JSON.parse(body);
   for (let i = 0; i < tasks.length; i++) {
     if (tasks[i].completed) {
-      const key = (tasks[i].userId).toString();
+      const key = tasks[i].userId;
       if (key in output) {
         output[key]++;
       } else {
