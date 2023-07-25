@@ -6,7 +6,12 @@ const url = process.argv[2];
 const output = {};
 
 request(url, (error, response, body) => {
-  if (error) console.log(error);
+  if (error) {
+    return;
+  }
+  if (response.statusCode !== 200) {
+    return;
+  }
   const tasks = JSON.parse(body);
   for (let i = 0; i < tasks.length; i++) {
     if (tasks[i].completed) {
