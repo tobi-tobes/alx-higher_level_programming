@@ -5,7 +5,7 @@ const request = require('request');
 const id = process.argv[2];
 const url = 'https://swapi-api.alx-tools.com/api/films/' + id + '/';
 
-function getCharacterName(charUrl) {
+function getCharacterName (charUrl) {
   return new Promise(function (resolve, reject) {
     request(charUrl, (error, response, body) => {
       if (error) {
@@ -18,13 +18,13 @@ function getCharacterName(charUrl) {
   });
 }
 
-async function printCharacters() {
-  resp = await new Promise(function (resolve, reject) {
+async function printCharacters () {
+  const resp = await new Promise(function (resolve, reject) {
     request(url, (error, response, body) => {
       if (error) {
         reject(error);
       } else {
-	resolve(body);
+        resolve(body);
       }
     });
   });
@@ -35,10 +35,10 @@ async function printCharacters() {
   for (let i = 0; i < characters.length; i++) {
     const charUrl = characters[i];
     try {
-      let name = await getCharacterName(charUrl);
+      const name = await getCharacterName(charUrl);
       console.log(name);
     } catch (error) {
-      throw error;
+      console.log(error);
     }
   }
 }
