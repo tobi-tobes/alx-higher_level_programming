@@ -23,5 +23,35 @@ request(url, (error, response, body) => {
       }
     }
   }
-  console.log(output);
+
+  const length = Object.keys(output).length;
+  let i = 0;
+  process.stdout.write('{');
+
+  if (length === 0) {
+    console.log('}');
+  } else if (length < 8) {
+    for (const key in output) {
+      process.stdout.write(`'${key}': ${output[key]}`);
+      if (i < length - 1) {
+        process.stdout.write(', ');
+      }
+      i++;
+    }
+    console.log('}');
+  } else {
+    for (const key in output) {
+      if (i === 0) {
+        process.stdout.write(' ');
+      } else {
+        process.stdout.write('  ');
+      }
+      process.stdout.write(`'${key}': ${output[key]}`);
+      if (i < length - 1) {
+        process.stdout.write(',\n');
+      }
+      i++;
+    }
+    console.log(' }');
+  }
 });
