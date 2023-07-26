@@ -38,7 +38,7 @@ request(url, (error, response, body) => {
       }
       i++;
     }
-    console.log('}');
+    console.log(' }');
   } else {
     for (const key in output) {
       if (i === 0) {
