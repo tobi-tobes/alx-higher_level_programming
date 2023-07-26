@@ -31,6 +31,7 @@ request(url, (error, response, body) => {
   if (length === 0) {
     console.log('}');
   } else if (length < 8) {
+    process.stdout.write(' ');
     for (const key in output) {
       process.stdout.write(`'${key}': ${output[key]}`);
       if (i < length - 1) {
