@@ -14,7 +14,7 @@ request(url, (error, response, body) => {
   for (let i = 0; i < filmsList.length; i++) {
     const actors = filmsList[i].characters;
     for (let j = 0; j < actors.length; j++) {
-      if (actors[j].endsWith(charId)) { count ++; }
+      if (actors[j].endsWith(charId)) { count++; }
     }
   }
   console.log(count);
