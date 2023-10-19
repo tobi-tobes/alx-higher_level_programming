@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-0-stats.py
+101-stats.py
 This module contains a script that reads stdin
 line by line and computes metrics:
 Input format:
